@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amal Arul | Photography Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=DM+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#d0e9d6",
+                        "on-background": "#1c1b1b",
+                        "outline": "#737973",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#364c3e",
+                        "surface-dim": "#dcd9d9",
+                        "surface": "#fcf9f8",
+                        "primary-container": "#1a2f23",
+                        "on-primary-container": "#809787",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-variant": "#e5e2e1",
+                        "primary-fixed-dim": "#b4ccbb",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary-fixed-variant": "#474742",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-secondary-container": "#743d00",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#1c1c18",
+                        "primary": "#051a0f",
+                        "on-secondary-fixed": "#2f1500",
+                        "surface-bright": "#fcf9f8",
+                        "outline-variant": "#c2c8c2",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f0edec",
+                        "on-tertiary-container": "#94928c",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#ffa85c",
+                        "background": "#fcf9f8",
+                        "surface-tint": "#4d6355",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#0a2014",
+                        "surface-container-high": "#ebe7e7",
+                        "secondary-fixed": "#ffdcc3",
+                        "tertiary-container": "#2b2b27",
+                        "on-surface-variant": "#424843",
+                        "tertiary-fixed": "#e5e2db",
+                        "secondary": "#904d03",
+                        "inverse-primary": "#b4ccbb",
+                        "tertiary": "#171713",
+                        "inverse-surface": "#313030",
+                        "tertiary-fixed-dim": "#c9c6c0",
+                        "on-surface": "#1c1b1b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "section-gap": "120px",
+                        "margin-desktop": "80px",
+                        "margin-mobile": "20px",
+                        "margin-tablet": "40px",
+                        "gutter": "32px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["DM Sans"],
+                        "headline-md": ["Playfair Display"],
+                        "body-lg": ["DM Sans"],
+                        "label-sm": ["DM Sans"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-xl": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .photo-card img {
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .photo-card:hover img {
+            transform: scale(1.03);
+        }
+        .paper-border {
+            border: 1px solid #c2c8c2;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fcf9f8;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1a2f23;
+        }
+        /* Columns for masonry effect */
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary/30">
+<!-- Navigation Shell -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 bg-surface/90 backdrop-blur-sm border-b border-outline-variant/30">
+<div class="font-headline-md text-headline-md text-primary italic leading-none">
+            Amal Arul
+        </div>
+<nav class="hidden md:flex gap-10">
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-secondary border-b border-secondary pb-1 transition-all duration-300" href="#home">Home</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#gallery">Gallery</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#about">About</a>
+<a class="font-label-sm text-label-sm tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#contact">Contact</a>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop mb-section-gap overflow-hidden bg-cover bg-center" id="home" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZBGGIKLUZ8vyxFjILlBynga7CR5oikFTpr43nyduOrqXF4u1vhNG7cERoEwV4RnQyE5Lu-kOE9EGOQExqtkXc-0rjf4GMRn-S8ZFd5swtt6_inusENpGCUlHS0g9s_1McsKcIpGTKnHrs-H6MeBqfdcrykXDTJOt1BmS9nyr6UyQbH7yCy69JMcVE-ruygDLTn20aOv6b1d488r4Tk9yn5dKNeGV00sLwDYUM8iNXniDvduDA4dGcoAT43jSBhrczZLnBMvlJM1K6');">
+<div class="relative z-10 space-y-6 max-w-4xl">
+<h1 class="font-headline-xl text-headline-xl md:text-headline-xl reveal active text-on-primary" id="hero-title">
+                    AMAL ARUL
+                </h1>
+<p class="font-label-sm text-label-sm tracking-[0.25em] uppercase text-on-primary reveal active" style="transition-delay: 200ms;">
+                    Capturing Life, One Frame at a Time
+                </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant reveal max-w-2xl mx-auto active text-on-primary" style="transition-delay: 600ms;">
+                    Every photograph tells a story. Through my lens, I strive to capture the beauty of everyday moments, the energy of nature, and the emotions that make each frame unique.
+                </p>
+<div class="pt-8 reveal active" style="transition-delay: 800ms;">
+<a class="inline-flex items-center gap-4 px-12 py-4 bg-primary-container text-on-primary-container font-label-sm uppercase tracking-widest hover:opacity-90 transition-all duration-300 group" href="#gallery">
+                        Explore Portfolio
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="px-margin-mobile md:px-margin-desktop mb-section-gap" id="gallery">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">The Visual Journey</h2>
+<p class="font-body-md text-on-surface-variant max-w-lg">A curated selection of moments frozen in time, spanning across various landscapes and cultures.</p>
+</div>
+<div class="flex gap-4">
+<span class="font-label-sm px-4 py-2 paper-border uppercase text-on-surface-variant">Nature</span>
+<span class="font-label-sm px-4 py-2 paper-border uppercase text-on-surface-variant">Street</span>
+<span class="font-label-sm px-4 py-2 paper-border uppercase text-on-surface-variant">Lifestyle</span>
+</div>
+</div>
+<!-- Masonry Grid with Natural Ratios -->
+<div class="masonry-grid max-w-7xl mx-auto">
+<!-- Landscape: Bamboo & Sea -->
+<div class="masonry-item photo-card reveal">
+<div class="overflow-hidden bg-surface-container-low group">
+<img alt="Coastal view through bamboo" class="w-full h-auto block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIKmIr7GLOXSrfu6LdxDReVxjfGojJjcErOfAeaQchFl_XHL-BD4hNVaV7WJjhTGcbKXQnDsUgDam_aY0H7PPUdWqjtWPtDJOSsEV_SM1Gsw_PYwjnXFfMIGKLvjRCvqQBzOuyYyf-cP15OluK-LkZWbFAx8BOso7NdMoi5lmhU_slEyrsHVBvmjn3rSZl-ny3iKthZ-BIMzWhA4ccMdHS-QcdchYH3qHETNdOYtr-w-iBUMw3DrgI6okqvtGbykJp7vaEiI3uH2qH"/>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant/20">
+<span class="font-label-sm uppercase tracking-widest text-[10px] text-on-surface-variant">Serene Horizons</span>
+</div>
+</div>
+</div>
+<!-- Portrait: Cricket Match -->
+<div class="masonry-item photo-card reveal">
+<div class="overflow-hidden bg-surface-container-low group">
+<img alt="Cricket game in palm grove" class="w-full h-auto block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANkq_VPLveOzDqH2_Oh-O_lwDJKgQWNPWL3hF0qZiwuG-KQOkwWuxrxzkaa7YYvZa3gNedvc4fNsj50GfvSzwOBKv6I7QpYT8_H6ovz10GksdlDglroSaPolCYXQeA3b23AJxzvjM4Q-nfvU1ltuaaytmioRYnt5Aca-R4IL3_dg-QP4X4cTbpNRI_VHEhcx9YxQAnWpyZpWusQ94FWXULZokR8gU6A556a5v4_OUfGWNGwyhTMlpRY1AzIoY02znhBnfLvkiTHmha"/>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant/20">
+<span class="font-label-sm uppercase tracking-widest text-[10px] text-on-surface-variant">Rural Rhythm</span>
+</div>
+</div>
+</div>
+<!-- Landscape: Beach Meditation -->
+<div class="masonry-item photo-card reveal">
+<div class="overflow-hidden bg-surface-container-low group">
+<img alt="Meditation on beach" class="w-full h-auto block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkEbrunDTwbXTLBPPNb26psX72a2nKl57yTrE3sR4zKOCVN5GDsxmDLfebtA366VZLbnq6-mQG72SXCO_2wUdARYkrQSXBJDba4U2Qiix7tjfxK30d48llgZV8q3557hwLd-lkpz7Toi7btZFiK_uH5QKLMAYQlMFmBioE3q52dQ1lKXZKtf-_n6PsjdXLoMS5YBUUgWgqF7-mbco8bqwbFi0FbamceREq2-klhFZG3t-ftqArltQQkH2GCo1SDhw9FQGoiZc2xNqo"/>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant/20">
+<span class="font-label-sm uppercase tracking-widest text-[10px] text-on-surface-variant">Coastal Solitude</span>
+</div>
+</div>
+</div>
+<!-- Portrait: Lush Green Field -->
+<div class="masonry-item photo-card reveal">
+<div class="overflow-hidden bg-surface-container-low group">
+<img alt="Green field under cloudy sky" class="w-full h-auto block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO6QAjTdMiHhZTwc5OlyhEiZvhD2g9rO_SEJ4bRfH8-fQUjLKswRKZfYpqIYSK75mAuoIvbRIjIG2D9dSMcV4A4DrFLH8Tj-x_N5XMXiTDG1sHaqXrAhAr71vHsjq1hnMGtP5sse9kAZIRrG7wYx0i1pcAUJReZrkuLSEiBRiWN1u3S0ttx_-_msatINxxS-BcKJajkSBgxE5HS5FsASDn0JveVcV3q2it_cq7sUjGgbmB4Sy4cI7TpKIvGGwfAsgRNzRn2VFfY6bl"/>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant/20">
+<span class="font-label-sm uppercase tracking-widest text-[10px] text-on-surface-variant">Emerald Earth</span>
+</div>
+</div>
+</div>
+<!-- Placeholder: Future Stories -->
+<div class="masonry-item reveal">
+<div class="border border-dashed border-outline-variant flex flex-col items-center justify-center p-12 text-center bg-surface-container-lowest aspect-video">
+<span class="material-symbols-outlined text-outline text-3xl mb-4">photo_library</span>
+<h3 class="font-headline-md text-2xl text-primary italic">Future Stories</h3>
+<p class="font-label-sm text-outline-variant uppercase mt-2 text-[10px]">Coming Soon</p>
+</div>
+</div>
+<!-- Landscape: Sunset Waves -->
+<div class="masonry-item photo-card reveal">
+<div class="overflow-hidden bg-surface-container-low group">
+<img alt="Ocean sunset" class="w-full h-auto block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxZCcSFV6sG7nIXHEm_eK7f9pv_doRR6TLmNF7Nm44tV9yE9MtPMvwknaXT3HOGWHvgw-73cKu4plXqhNJTNoKkAzHtDdT8mT6jcwAYhmmmh0EUpLKXHkxTBHANvb8PCLo19OXNifhhmCxEHqwAtDBqr0xv5ZFHYzgeUokBcbi4hJQpTMDbE_yc7KPZyzuluFoEhPZSWwJAvAqhyMx-nQp9fy68HcRlFNButaYTfM1MGusLBfqi3ufb_ubxHbTPK3gL6cMUtdm63G2"/>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant/20">
+<span class="font-label-sm uppercase tracking-widest text-[10px] text-on-surface-variant">Golden Hour</span>
+</div>
+</div>
+</div>
+<!-- Portrait: Dog Portrait -->
+<div class="masonry-item photo-card reveal">
+<div class="overflow-hidden bg-surface-container-low group">
+<img alt="Loyal companion" class="w-full h-auto block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGQIRMbjHQTIHDlB5P841ApeAsr_z-VCioyLviginF9EhakfOkdWg9sJCIEImTClYRW0OijlZLUZxCV2-EhMUV__l5nvsxsvisk9RGfi0ntUXeInZtxW2FqffBHHy2g1HNzUTSqdjcLv3g45CF_TgYR55-YAn0dmQ1QgfMwbL5jvihC-XP14pYX5ge3MbI-zCsgZqTH-tg95Hw8JffZOEGuw3YzcjLliEAAXDlns-wKQ-ZoPa_ZbqhBNBe8T5ofQN-dMNfDdJbdJ9T"/>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant/20">
+<span class="font-label-sm uppercase tracking-widest text-[10px] text-on-surface-variant">Local Friends</span>
+</div>
+</div>
+</div>
+<!-- Landscape: Sunset Rocky Coast -->
+<div class="masonry-item photo-card reveal">
+<div class="overflow-hidden bg-surface-container-low group">
+<img alt="Rocky coast sunset" class="w-full h-auto block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-2CxRbawthW6vV4IatQPlquZ1CoBpG4XRk2fpnfh21ZFMtDwh3Cvw5OKbUculhaJgOV--P9PSVwaVbxkbbXVRlJHUfz3XD_xHEMQC1uULnfhj4DsRhhLdjYfTKIIC4JeFgB21Ba5i9Nw84s4m7zJY0xUCwFtLl7PX7oPwbMad2W8a-2xMraYNB52EW0XrUMBisDXGbnd2hWwsHhlt65GXkYtN7lDinJJMFay1ymHg0tYdzP1CcdRhzEFWY-Cvlyi85lriUjfRDctz"/>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant/20">
+<span class="font-label-sm uppercase tracking-widest text-[10px] text-on-surface-variant">Visual Chapters</span>
+</div>
+</div>
+</div>
+<!-- Placeholder: Upcoming Frames -->
+<div class="masonry-item reveal">
+<div class="border border-dashed border-outline-variant flex flex-col items-center justify-center p-12 text-center bg-surface-container-lowest aspect-square">
+<span class="material-symbols-outlined text-outline text-3xl mb-4">hourglass_top</span>
+<h3 class="font-headline-md text-2xl text-primary italic">Upcoming Frames</h3>
+<p class="font-label-sm text-outline-variant uppercase mt-2 text-[10px]">In Development</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Quote Section -->
+<section class="py-24 bg-surface-container-low text-center overflow-hidden">
+<div class="max-w-4xl mx-auto px-margin-mobile">
+<span class="material-symbols-outlined text-secondary text-5xl mb-8">format_quote</span>
+<p class="font-headline-lg text-headline-lg italic text-primary leading-tight mb-8">
+                    "A camera captures what the eye sees, but a photograph reveals what the heart feels."
+                </p>
+<div class="w-12 h-1 bg-secondary mx-auto"></div>
+</div>
+</section>
+<!-- About Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap" id="about">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div class="relative reveal">
+<div class="aspect-[4/5] overflow-hidden">
+<img alt="Amal Arul" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcc5WiZWtUc1Yp81Xig2X9qDZgOW0wLB68WREUL61E7ydOfo_6ijuHHfUfBwp5rXrMzzZBsP_ApxFjg8boz5kJo-bi33cOOYglAb_eCh7Fn-Oyq98P0DsofY0HsUJeNaYziX2S4-gp7A6U7Xs8kXFUHQEVOVKyNSEEkEC_fAR9540UT7KKQuhAl0T-MiVmG5YZuZiDeaGvHjwMUNw8n4B0uTpFHo-DOp8zj0_5q_I9YdUDhwBlmflqLhx38eDrvaFo6bht6Ti2vK2j"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-64 h-64 border border-outline-variant -z-10"></div>
+</div>
+<div class="space-y-8 reveal" style="transition-delay: 200ms;">
+<h2 class="font-headline-lg text-headline-lg text-primary">About the Artist</h2>
+<p class="font-body-lg text-on-surface-variant">
+                        I am a B.Tech student at CET Trivandrum, blending the precision of engineering with the raw emotion of visual storytelling. For me, photography isn't just a hobby—it's a way of documenting the silent dialogue between light and life.
+                    </p>
+<div class="space-y-4">
+<h3 class="font-headline-md text-headline-md italic">My Vision: Seeing Beyond the Ordinary</h3>
+<p class="font-body-md text-on-surface-variant italic border-l-2 border-secondary pl-6 py-2">
+                            To create images that pause the chaotic rhythm of daily life and invite viewers to find beauty in the overlooked details.
+                        </p>
+</div>
+<div class="grid grid-cols-2 gap-4 pt-4">
+<div class="p-6 paper-border">
+<h4 class="font-label-sm uppercase tracking-widest text-primary mb-2">Nature &amp; Landscape</h4>
+<p class="text-xs text-on-surface-variant">Capturing the raw power and serene stillness of the natural world.</p>
+</div>
+<div class="p-6 paper-border">
+<h4 class="font-label-sm uppercase tracking-widest text-primary mb-2">Street &amp; Lifestyle</h4>
+<p class="text-xs text-on-surface-variant">Documenting the unscripted moments of human existence.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="px-margin-mobile md:px-margin-desktop pb-section-gap" id="contact">
+<div class="bg-primary-container text-on-primary-container p-12 md:p-24 flex flex-col md:flex-row gap-20 rounded-lg">
+<div class="md:w-1/2 space-y-8">
+<h2 class="font-headline-lg text-headline-lg text-on-primary">Let's Connect</h2>
+<p class="font-body-lg text-on-primary-container">
+                        Whether you have a project in mind, a collaboration request, or simply want to say hello, I'd love to hear from you.
+                    </p>
+<div class="space-y-6 pt-4">
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-secondary-fixed">mail</span>
+<div>
+<p class="font-label-sm uppercase text-on-primary-container/60 text-[10px]">Email Me</p>
+<p class="font-body-md text-on-primary">amalarul200620@gmail.com</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-secondary-fixed">phone_iphone</span>
+<div>
+<p class="font-label-sm uppercase text-on-primary-container/60 text-[10px]">Call Me</p>
+<p class="font-body-md text-on-primary">+91 8943348340</p>
+</div>
+</div>
+</div>
+<div class="flex gap-6 pt-8">
+<a class="hover:text-secondary-fixed transition-colors text-on-primary-container underline underline-offset-4" href="#">Instagram @leo_amal_x10</a>
+<a class="hover:text-secondary-fixed transition-colors text-on-primary-container underline underline-offset-4" href="#">LinkedIn</a>
+</div>
+</div>
+<div class="md:w-1/2">
+<form class="space-y-8" onsubmit="event.preventDefault();">
+<div class="space-y-1">
+<label class="font-label-sm uppercase tracking-widest text-on-primary-container">Name</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-secondary transition-colors py-2 text-on-primary placeholder:text-on-primary-container/30" placeholder="Your full name" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm uppercase tracking-widest text-on-primary-container">Email</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-secondary transition-colors py-2 text-on-primary placeholder:text-on-primary-container/30" placeholder="yourname@email.com" type="email"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm uppercase tracking-widest text-on-primary-container">Message</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-secondary transition-colors py-2 text-on-primary placeholder:text-on-primary-container/30 resize-none" placeholder="What's on your mind?" rows="4"></textarea>
+</div>
+<button class="w-full bg-on-primary text-primary-container py-4 font-label-sm uppercase tracking-[0.2em] hover:bg-secondary-fixed transition-colors">
+                            Send Message
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-10 gap-gutter border-t border-outline-variant/20 bg-surface-container-lowest">
+<div class="font-headline-md text-headline-md text-primary leading-none italic">
+            Amal Arul
+        </div>
+<p class="font-body-md text-on-surface-variant">© 2024 Amal Arul Photography. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-sm uppercase" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-sm uppercase" href="#">Privacy</a>
+</div>
+</footer>
+<!-- Fixed Vertical Tagline -->
+<div class="fixed bottom-24 right-6 origin-bottom-right -rotate-90 hidden lg:block">
+<p class="font-label-sm text-outline uppercase tracking-[0.3em] whitespace-nowrap opacity-50">
+            Through My Lens, Every Moment Matters.
+        </p>
+</div>
+<script>
+        // Reveal animation on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body></html>
